@@ -6,6 +6,21 @@
     background: var(--bg-peach);
     color: var(--text-dark);
     overflow: hidden;
+    padding-bottom: 6rem; /* Extra bottom padding for wave */
+}
+
+/* Wave pattern at bottom */
+.petting-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39,188.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,163,906.67,204,985.66,224.83c70.05,18.48,146.53,26.09,214.34,3V120H0V159.35A600.21,600.21,0,0,0,321.39,188.44Z' fill='%23FAFAF8'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
 }
 
 .hero-carousel {

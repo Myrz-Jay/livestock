@@ -2,9 +2,40 @@
 
 /* Hero Section */
 .contact-hero {
-    background: var(--bg-peach);
-    padding: 4rem 0;
+    background-color: var(--bg-peach);
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 100px,
+            rgba(255, 255, 255, 0.08) 100px,
+            rgba(255, 255, 255, 0.08) 200px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 100px,
+            rgba(255, 255, 255, 0.08) 100px,
+            rgba(255, 255, 255, 0.08) 200px
+        );
+    padding: 4rem 0 12rem; /* Extra bottom padding for wave */
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Wave pattern at bottom */
+.contact-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
 }
 
 .contact-hero h1 {
