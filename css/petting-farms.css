@@ -3,8 +3,8 @@
 /* Hero Section with Carousel */
 .petting-hero {
     position: relative;
-    background: linear-gradient(135deg, #4a90e2 0%, #7b68ee 100%);
-    color: var(--white);
+    background: var(--bg-peach);
+    color: var(--text-dark);
     overflow: hidden;
 }
 
@@ -129,7 +129,7 @@
 }
 
 .showcase-image {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: var(--secondary-color);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -286,7 +286,7 @@
 }
 
 .stat-card {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--white);
     padding: 2rem;
     border-radius: 15px;
@@ -345,7 +345,7 @@
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+    background: var(--accent-color);
     color: var(--white);
     padding: 0.5rem 1.5rem;
     border-radius: 20px;
@@ -667,7 +667,7 @@
 /* CTA Section */
 .petting-cta {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #4a90e2, #7b68ee);
+    background: var(--accent-color);
     text-align: center;
 }
 

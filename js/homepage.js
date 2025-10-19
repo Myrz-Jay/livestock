@@ -88,4 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
             hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
         });
     }
+    
+    // Preload next images for better performance
+    const serviceImages = document.querySelectorAll('.service-image');
+    serviceImages.forEach(img => {
+        img.addEventListener('error', function() {
+            // Fallback if image doesn't load
+            this.style.display = 'none';
+            const fallback = document.createElement('div');
+            fallback.className = 'image-fallback';
+            fallback.innerHTML = this.alt.includes('shearing') ? '✂️' : '🏠';
+            this.parentNode.insertBefore(fallback, this);
+        });
+    });
 });

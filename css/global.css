@@ -1,15 +1,27 @@
-/* Global Styles */
+/* Global Styles - Perry's Pets and Livestock */
 :root {
-    --primary-color: #2c5f2d;
-    --secondary-color: #97bc62;
-    --accent-color: #f4a460;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --background-light: #f8f9fa;
-    --white: #ffffff;
-    --border-color: #e0e0e0;
-    --shadow: 0 2px 10px rgba(0,0,0,0.1);
-    --shadow-hover: 0 5px 20px rgba(0,0,0,0.15);
+    /* Background/Pastel Colors */
+    --bg-sage: #AFCAC7;             /* Light sage - section backgrounds */
+    --bg-peach: #F0AB8F;            /* Light peach - alternate sections */
+    --bg-gold: #FCBD62;             /* Light gold - special highlights */
+    --bg-light: #FAFAF8;            /* Off-white - main background */
+    
+    /* Action/Vibrant Colors */
+    --primary-color: #5A8A7B;       /* Deep sage - primary buttons, headers */
+    --secondary-color: #E67856;      /* Vibrant coral - secondary buttons */
+    --accent-color: #F5A623;         /* Rich gold - CTAs, important elements */
+    
+    /* Text Colors */
+    --text-dark: #2D3E3F;           /* Very dark sage - main text */
+    --text-light: #6B7B7D;          /* Medium gray - secondary text */
+    --text-white: #FFFFFF;          /* White text on dark backgrounds */
+    
+    /* UI Elements */
+    --white: #FFFFFF;
+    --background-light: var(--bg-light);
+    --border-color: #D8E3DF;        /* Light sage border */
+    --shadow: 0 2px 15px rgba(90, 138, 123, 0.15);
+    --shadow-hover: 0 5px 25px rgba(90, 138, 123, 0.25);
 }
 
 * {
@@ -55,13 +67,17 @@ body {
     align-items: center;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    font-size: 1.3rem;
 }
 
-.logo-icon {
-    font-size: 2rem;
-    margin-right: 0.5rem;
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 0.75rem;
+}
+
+.logo-text {
+    color: var(--text-dark);
 }
 
 .nav-menu {
@@ -76,6 +92,23 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 .nav-link:hover,
@@ -84,15 +117,23 @@ body {
 }
 
 .cta-button {
-    background: var(--primary-color);
-    color: var(--white) !important;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    transition: background 0.3s ease;
+    background: var(--accent-color);
+    color: var(--text-dark) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .cta-button:hover {
     background: var(--secondary-color);
+    color: var(--text-white) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.cta-button::after {
+    display: none;
 }
 
 .mobile-menu-toggle {
@@ -110,6 +151,7 @@ body {
     background: var(--text-dark);
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 3px;
 }
 
 /* Footer Styles */
@@ -130,6 +172,12 @@ body {
 .footer-column h4 {
     margin-bottom: 1rem;
     color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.footer-column p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
 }
 
 .footer-links,
@@ -138,7 +186,7 @@ body {
 }
 
 .footer-links a {
-    color: var(--white);
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
     line-height: 2;
     transition: color 0.3s ease;
@@ -150,28 +198,14 @@ body {
 
 .contact-info li {
     line-height: 2;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.5rem;
-}
-
-.social-links a {
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
+    color: rgba(255,255,255,0.8);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.6);
 }
 
 /* Button Styles */
@@ -179,38 +213,59 @@ body {
     display: inline-block;
     padding: 0.75rem 2rem;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 5px;
     font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
+    text-align: center;
 }
 
 .btn-primary {
     background: var(--primary-color);
-    color: var(--white);
+    color: var(--text-white);
 }
 
 .btn-primary:hover {
     background: var(--secondary-color);
+    color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--text-white);
     border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--secondary-color);
+    color: var(--text-white);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .btn-large {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
 }
 
 /* Responsive */
@@ -234,5 +289,13 @@ body {
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .cta-button {
+        margin-top: 1rem;
     }
 }
