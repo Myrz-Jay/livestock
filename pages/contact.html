@@ -6,6 +6,9 @@
     <meta name="description" content="Contact Perry's Pets and Livestock for professional livestock services. Shearing, livestock sitting services. Text preferred: 0412 649 028">
     <title>Contact Us | Perry's Pets and Livestock</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/contact.css">
@@ -71,7 +74,12 @@
             <div class="contact-grid">
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
-                    <form action="" method="POST" name="booking-enquiry" id="booking-enquiry" class="contact-form">
+                    <form name="booking-enquiry" id="booking-enquiry" class="contact-form" netlify netlify-honeypot="bot-field">
+                        <!-- Hidden field for spam protection -->
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        
                         <h2>Booking Enquiry Form</h2>
                         <p class="form-intro">Complete the form below and we'll get back to you within 24 hours</p>
                         

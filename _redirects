@@ -1,0 +1,2 @@
+# Netlify Forms redirects
+/contact.html 200 /pages/contact-success.html

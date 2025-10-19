@@ -114,9 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form submission
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         if (!validateForm()) {
+            e.preventDefault();
             // Scroll to first error
             const firstError = form.querySelector('.error');
             if (firstError) {
@@ -133,40 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
         
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.innerHTML = `
-                <h3>Thank You!</h3>
-                <p>Your enquiry has been sent successfully. We'll get back to you within 24 hours.</p>
-            `;
-            form.insertBefore(successMessage, form.firstChild);
-            
-            // Reset form
-            form.reset();
-            eventFields.style.display = 'none';
-            
-            // Reset button
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-            
-            // Clear all success states
-            form.querySelectorAll('.success').forEach(field => {
-                field.classList.remove('success');
-            });
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Remove success message after 10 seconds
-            setTimeout(() => {
-                successMessage.style.opacity = '0';
-                setTimeout(() => successMessage.remove(), 300);
-            }, 10000);
-        }, 2000);
+        // Allow form to submit to Netlify - no preventDefault()
+        // Netlify will handle the submission and redirect to success page
     });
     
     // Set minimum date to today
