@@ -545,7 +545,7 @@
     /* Hero section responsive adjustments */
     .sitting-hero {
         min-height: 500px;
-        padding: 3rem 0;
+        padding: 3rem 0 8rem; /* Extra bottom padding for wave pattern on mobile */
     }
     
     .sitting-hero h1 {

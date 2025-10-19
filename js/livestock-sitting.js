@@ -191,13 +191,4 @@ document.addEventListener('DOMContentLoaded', function() {
         testimonialObserver.observe(card);
     });
     
-    // Add parallax effect to hero section
-    const heroSection = document.querySelector('.sitting-hero');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.3;
-            heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        });
-    }
 });

@@ -577,7 +577,7 @@
     /* Hero section responsive adjustments */
     .shearing-hero {
         min-height: 500px;
-        padding: 3rem 0;
+        padding: 3rem 0 8rem; /* Extra bottom padding for wave pattern on mobile */
     }
     
     .shearing-hero h1 {
